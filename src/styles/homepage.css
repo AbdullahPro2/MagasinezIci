@@ -1,0 +1,33 @@
+.carousel {
+  overflow-x: hidden;
+}
+.inner {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item {
+  position: relative;
+  height: 650px;
+}
+.carousel-item img {
+  width: 98.95vw;
+  height: 100%;
+}
+.carousel-details {
+  position: absolute;
+  top: 50%;
+  left: 3rem;
+  width: 30%;
+}
+.carousel-details h3 {
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+}
+.carousel-details p {
+  font-size: 1.5rem;
+}
+.item-1,
+.item-3 {
+  color: white;
+}

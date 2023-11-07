@@ -1,13 +1,14 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import Logo from "../imgs/Logo.png";
+import "../styles/navbar.css";
 
 function Navbar() {
   return (
     <header>
-      <nav>
-        <img src={Logo} alt="logo" style={{ width: "5%" }} />
-        <ul>
+      <nav className="nav">
+        <img src={Logo} alt="logo" />
+        <ul className="nav-list">
           <li>
             {" "}
             <NavLink to="/">HomePage</NavLink>

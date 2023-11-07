@@ -1,0 +1,22 @@
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+}
+.nav img {
+  width: 7%;
+}
+.nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.7rem;
+}
