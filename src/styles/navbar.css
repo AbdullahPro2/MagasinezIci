@@ -3,6 +3,7 @@ li {
 }
 a {
   text-decoration: none;
+  color: black;
 }
 
 .nav {
@@ -13,6 +14,7 @@ a {
 }
 .nav img {
   width: 7%;
+  filter: brightness(1%);
 }
 .nav-list {
   display: flex;

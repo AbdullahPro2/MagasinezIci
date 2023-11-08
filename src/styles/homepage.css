@@ -60,3 +60,20 @@
 .item-0 .carousel-details {
   color: rgba(255, 255, 255, 0.846);
 }
+/* services-container */
+
+.services-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+}
+.service {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.service img {
+  width: 25%;
+}
