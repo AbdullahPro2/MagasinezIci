@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CarouselItem from "./CarouselItem";
 
 function Carousel() {
@@ -40,6 +40,20 @@ function Carousel() {
     setActiveIndex(newIndex);
   }
 
+  // useEffect(() => {
+  //   let newIndex = activeIndex + 1;
+  //   if (newIndex < 0) {
+  //     newIndex = items.length - 1;
+  //   } else if (newIndex >= items.length) {
+  //     newIndex = 0;
+  //   }
+  //   const timtOut = setTimeout(() => {
+  //     setActiveIndex(newIndex);
+  //   }, 5000);
+
+  //   return () => clearTimeout(timtOut);
+  // }, [activeIndex, items.length]);
+
   return (
     <div className="carousel">
       <div
@@ -50,10 +64,12 @@ function Carousel() {
           <CarouselItem key={index} item={item} index={index} />
         ))}
       </div>
-      <button onClick={() => updateIndex(1)} className="nextbtn">
-        Next
+      <button onClick={() => updateIndex(1)} className="left-arrow arrow">
+        &rarr;
       </button>
-      <button onClick={() => updateIndex(-1)}>Previous</button>
+      <button onClick={() => updateIndex(-1)} className="right-arrow arrow">
+        &larr;
+      </button>
     </div>
   );
 }

@@ -1,33 +1,62 @@
 .carousel {
-  overflow-x: hidden;
+  position: relative;
+  overflow: hidden;
 }
+
 .inner {
   display: flex;
-  transition: transform 0.5s ease;
+  transition: transform 0.5s ease-in-out;
 }
 
 .carousel-item {
   position: relative;
-  height: 650px;
 }
+
 .carousel-item img {
-  width: 98.95vw;
-  height: 100%;
+  height: 600px;
+  width: 99vw;
 }
+
 .carousel-details {
   position: absolute;
   top: 50%;
-  left: 3rem;
+  transform: translateY(-50%);
+  left: 5rem;
   width: 30%;
 }
+
 .carousel-details h3 {
   margin-bottom: 1rem;
   font-size: 2.5rem;
 }
+
 .carousel-details p {
   font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
-.item-1,
-.item-3 {
+
+.arrow {
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  position: absolute;
+  top: 50%;
+  color: rgb(246, 57, 57);
+}
+
+.left-arrow {
+  right: 0;
+}
+
+.right-arrow {
+  left: 0;
+}
+
+.shop-now-btn {
+  padding: 0.5rem 1rem;
+  background-color: black;
   color: white;
+}
+.item-0 .carousel-details {
+  color: rgba(255, 255, 255, 0.846);
 }
