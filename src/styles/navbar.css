@@ -5,14 +5,19 @@ a {
   text-decoration: none;
   color: black;
 }
+.App {
+  overflow-x: hidden;
+  background-color: #f6f6f6;
+}
 
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
+  position: relative;
 }
-.nav img {
+.logo {
   width: 7%;
   filter: brightness(1%);
 }
@@ -21,4 +26,52 @@ a {
   align-items: center;
   justify-content: center;
   gap: 1.7rem;
+}
+.navbar-icons {
+  position: absolute;
+  right: 0;
+  display: none;
+  z-index: 4;
+}
+.nav-icon {
+  cursor: pointer;
+  width: 2.2rem;
+}
+.cart {
+  width: 30px;
+}
+@media (max-width: 1000px) {
+  .nav-list {
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+    gap: 2rem;
+    transform: translateX(100%);
+    transition: all 0.3s;
+    font-size: 1.2rem;
+    z-index: 3;
+    background-color: rgba(246, 246, 246, 0.75);
+    height: 100vh;
+  }
+  .nav-list .navlink {
+    width: 100%;
+    text-align: center;
+  }
+  .navbar-icons {
+    display: flex;
+    margin-right: 1rem;
+  }
+  .nav-active {
+    transform: translateX(0);
+  }
+  .logo {
+    width: 10%;
+  }
+}
+@media (max-width: 700px) {
+  .logo {
+    width: 15%;
+  }
 }

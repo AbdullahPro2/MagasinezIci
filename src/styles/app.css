@@ -5,10 +5,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-html {
-  font-size: 62.5%;
-  font-size: 100%;
-}
+
 .App {
   font-family: "Montserrat", sans-serif;
   min-height: 100vh;

@@ -1,43 +1,62 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Logo from "../imgs/Logo.png";
 import "../styles/navbar.css";
+import cross from "../imgs/CrossIcon.png";
+import menu from "../imgs/MenuIcon.png";
+import cart from "../imgs/cart.png";
 
 function Navbar() {
+  const [isActive, setIsActive] = useState(false);
   return (
     <header>
       <nav className="nav">
-        <img src={Logo} alt="logo" />
-        <ul className="nav-list">
-          <li>
+        <img src={Logo} alt="logo" className="logo" />
+        <ul className={`nav-list ${isActive ? "nav-active" : ""}`}>
+          <NavLink to="/" className="navlink">
             {" "}
-            <NavLink to="/">HomePage</NavLink>
-          </li>
-          <li>
+            <li> Home</li>
+          </NavLink>{" "}
+          <NavLink to="/products" className="navlink">
             {" "}
-            <NavLink to="/products">Products</NavLink>
-          </li>
-          <li>
-            {" "}
-            <NavLink to="/category/men">Men's</NavLink>
-          </li>
-          <li>
-            {" "}
-            <NavLink to="/category/women">Women's</NavLink>
-          </li>
-          <li>
-            {" "}
-            <NavLink to="/category/jewelery">Jwelery</NavLink>
-          </li>
-          <li>
-            {" "}
-            <NavLink to="/category/electronics">Electronics</NavLink>
-          </li>
-          <li>
-            {" "}
-            <NavLink to="/cart">Cart</NavLink>
-          </li>
+            <li>Products</li>
+          </NavLink>{" "}
+          <NavLink to="/category/men" className="navlink">
+            <li> Men's</li>
+          </NavLink>{" "}
+          <NavLink to="/category/women" className="navlink">
+            <li> Women's </li>
+          </NavLink>{" "}
+          <NavLink to="/category/jewelery" className="navlink">
+            <li>Jwelery</li>
+          </NavLink>{" "}
+          <NavLink to="/category/electronics" className="navlink">
+            <li> Electronics</li>
+          </NavLink>{" "}
+          <NavLink to="/cart" className="navlink">
+            <li>
+              <img src={cart} alt="Cart" className="cart" />{" "}
+            </li>
+          </NavLink>
         </ul>
+        <div className="navbar-icons">
+          {!isActive && (
+            <img
+              src={menu}
+              alt="navbar Icons"
+              className="nav-icon"
+              onClick={() => setIsActive(!isActive)}
+            />
+          )}
+          {isActive && (
+            <img
+              src={cross}
+              alt="navbar Icons"
+              className="nav-icon"
+              onClick={() => setIsActive(!isActive)}
+            />
+          )}
+        </div>
       </nav>
     </header>
   );

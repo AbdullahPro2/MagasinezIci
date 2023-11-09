@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CarouselItem from "./CarouselItem";
+import SwipeableViews from "react-swipeable-views";
 
 function Carousel() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -28,48 +29,50 @@ function Carousel() {
       img: require("../imgs/electronics.jpg"),
     },
   ];
-  function updateIndex(newIndex) {
-    newIndex += activeIndex;
-    if (newIndex < 0) {
-      newIndex = items.length - 1;
-    } else if (newIndex >= items.length) {
-      newIndex = 0;
+
+  // useEffect(() => {
+  //   let newIndex = activeIndex + 1;
+  //   if (newIndex < 0) {
+  //     newIndex = items.length - 1;
+  //   } else if (newIndex >= items.length) {
+  //     newIndex = 0;
+  //   }
+  //   const timtOut = setTimeout(() => {
+  //     setActiveIndex(newIndex);
+  //   }, 5000);
+
+  //   return () => clearTimeout(timtOut);
+  // }, [activeIndex, items.length]);
+
+  function handleChangeIndex(index) {
+    if (index > items.length - 1) {
+      setActiveIndex(0);
+    } else {
+      setActiveIndex(index);
     }
-    console.log(newIndex);
-    console.log("clicked");
-    setActiveIndex(newIndex);
   }
-
-  useEffect(() => {
-    let newIndex = activeIndex + 1;
-    if (newIndex < 0) {
-      newIndex = items.length - 1;
-    } else if (newIndex >= items.length) {
-      newIndex = 0;
-    }
-    const timtOut = setTimeout(() => {
-      setActiveIndex(newIndex);
-    }, 5000);
-
-    return () => clearTimeout(timtOut);
-  }, [activeIndex, items.length]);
-
   return (
     <div className="carousel">
-      <div
-        className="inner"
-        style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+      <SwipeableViews
+        enableMouseEvents
+        index={activeIndex}
+        onChangeIndex={handleChangeIndex}
+        animateTransitions
+        springConfig={{
+          duration: "0.6s",
+          easeFunction: "ease-out",
+          delay: "0s",
+        }}
       >
         {items.map((item, index) => (
-          <CarouselItem key={index} item={item} index={index} />
+          <div key={index} style={{ width: "100%" }}>
+            <CarouselItem item={item} index={index} />
+          </div>
         ))}
-      </div>
-      <button onClick={() => updateIndex(1)} className="left-arrow arrow">
-        &rarr;
-      </button>
-      <button onClick={() => updateIndex(-1)} className="right-arrow arrow">
-        &larr;
-      </button>
+        <div style={{ width: "100%" }}>
+          <CarouselItem item={items[0]} index={0} />
+        </div>
+      </SwipeableViews>
     </div>
   );
 }
