@@ -30,19 +30,19 @@ function Carousel() {
     },
   ];
 
-  // useEffect(() => {
-  //   let newIndex = activeIndex + 1;
-  //   if (newIndex < 0) {
-  //     newIndex = items.length - 1;
-  //   } else if (newIndex >= items.length) {
-  //     newIndex = 0;
-  //   }
-  //   const timtOut = setTimeout(() => {
-  //     setActiveIndex(newIndex);
-  //   }, 5000);
+  useEffect(() => {
+    let newIndex = activeIndex + 1;
+    if (newIndex < 0) {
+      newIndex = items.length - 1;
+    } else if (newIndex >= items.length) {
+      newIndex = 0;
+    }
+    const timtOut = setTimeout(() => {
+      setActiveIndex(newIndex);
+    }, 5000);
 
-  //   return () => clearTimeout(timtOut);
-  // }, [activeIndex, items.length]);
+    return () => clearTimeout(timtOut);
+  }, [activeIndex, items.length]);
 
   function handleChangeIndex(index) {
     if (index > items.length - 1) {
@@ -65,13 +65,9 @@ function Carousel() {
         }}
       >
         {items.map((item, index) => (
-          <div key={index} style={{ width: "100%" }}>
-            <CarouselItem item={item} index={index} />
-          </div>
+          <CarouselItem item={item} index={index} key={index} />
         ))}
-        <div style={{ width: "100%" }}>
-          <CarouselItem item={items[0]} index={0} />
-        </div>
+        <CarouselItem item={items[0]} index={0} />
       </SwipeableViews>
     </div>
   );

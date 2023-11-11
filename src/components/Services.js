@@ -1,11 +1,25 @@
-import React from "react";
+import React, { useRef } from "react";
 import delivery from "../imgs/delivery.png";
 import securePayment from "../imgs/securePayment.png";
 import returnFree from "../imgs/return.png";
+import useOnScroll from "../hooks/useOnScroll";
 
 function Services() {
+  const targetRef = useRef(null);
+  const visible = useOnScroll(
+    {
+      root: null,
+      rootMargin: "-50px 0px 0px 50px",
+      threshold: 0.4,
+    },
+    targetRef
+  );
+  if (visible) {
+    targetRef.current.classList.add("active");
+  }
+
   return (
-    <div className="services-container">
+    <div className={`services-container fade-in `} ref={targetRef}>
       <div className="service">
         <img src={delivery} alt="Icons of services" />
         <div>

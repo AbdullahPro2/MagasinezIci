@@ -3,7 +3,7 @@ import Services from "../components/Services";
 import "../styles/homepage.css";
 function HomePage() {
   return (
-    <div>
+    <div className="home-page">
       <Carousel />
       <Services />
     </div>

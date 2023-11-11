@@ -1,18 +1,39 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import Logo from "../imgs/Logo.png";
 import "../styles/navbar.css";
 import cross from "../imgs/CrossIcon.png";
 import menu from "../imgs/MenuIcon.png";
 import cart from "../imgs/cart.png";
+import useOnScroll from "../hooks/useOnScroll";
 
 function Navbar() {
   const [isActive, setIsActive] = useState(false);
+
+  const navbarRef = useRef(null);
+  const visible = useOnScroll(
+    {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.3,
+    },
+    navbarRef
+  );
+  function handleClick() {
+    setIsActive(!isActive);
+  }
+  useEffect(() => {
+    // Update isActive based on the value of visible
+    if (visible === false) setIsActive(false);
+  }, [visible]);
   return (
     <header>
       <nav className="nav">
         <img src={Logo} alt="logo" className="logo" />
-        <ul className={`nav-list ${isActive ? "nav-active" : ""}`}>
+        <ul
+          className={`nav-list ${isActive ? "nav-active" : ""}`}
+          ref={navbarRef}
+        >
           <NavLink to="/" className="navlink">
             {" "}
             <li> Home</li>
@@ -45,7 +66,7 @@ function Navbar() {
               src={menu}
               alt="navbar Icons"
               className="nav-icon"
-              onClick={() => setIsActive(!isActive)}
+              onClick={handleClick}
             />
           )}
           {isActive && (
@@ -53,7 +74,7 @@ function Navbar() {
               src={cross}
               alt="navbar Icons"
               className="nav-icon"
-              onClick={() => setIsActive(!isActive)}
+              onClick={handleClick}
             />
           )}
         </div>

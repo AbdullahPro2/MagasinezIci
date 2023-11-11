@@ -5,10 +5,6 @@ a {
   text-decoration: none;
   color: black;
 }
-.App {
-  overflow-x: hidden;
-  background-color: #f6f6f6;
-}
 
 .nav {
   display: flex;
@@ -48,23 +44,31 @@ a {
     top: 0;
     width: 50%;
     gap: 2rem;
-    transform: translateX(100%);
+    /* transform: translateX(100%); */
+    width: 0px;
     transition: all 0.3s;
     font-size: 1.2rem;
     z-index: 3;
-    background-color: rgba(246, 246, 246, 0.75);
+    /* background-color: rgba(246, 246, 246, 0.75); */
+    background-color: yellow;
     height: 100vh;
   }
   .nav-list .navlink {
     width: 100%;
     text-align: center;
+    display: none;
   }
   .navbar-icons {
     display: flex;
     margin-right: 1rem;
   }
+  /* Trick */
+  .nav-active .navlink {
+    display: inline;
+  }
   .nav-active {
     transform: translateX(0);
+    width: 50%;
   }
   .logo {
     width: 10%;

@@ -1,18 +1,18 @@
 .carousel {
   position: relative;
-  overflow: hidden;
-  width: 100vw;
+  width: 100%;
   margin: 0 auto;
   cursor: grabbing;
 }
 
 .carousel-item {
   position: relative;
+  width: 100%;
 }
 
 .carousel-item img {
   height: 700px;
-  width: 100vw;
+  width: 100%;
 }
 
 .carousel-details {
@@ -46,6 +46,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: all 0.5s;
 }
 .service {
   display: flex;
@@ -55,6 +56,15 @@
 }
 .service img {
   width: 20%;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(100px);
+}
+.fade-in.active {
+  opacity: 1;
+  transform: translateY(0px);
 }
 
 @media (max-width: 1000px) {
