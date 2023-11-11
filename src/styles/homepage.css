@@ -57,7 +57,7 @@
 .service img {
   width: 20%;
 }
-
+/* 
 .fade-in {
   opacity: 0;
   transform: translateY(100px);
@@ -65,7 +65,7 @@
 .fade-in.active {
   opacity: 1;
   transform: translateY(0px);
-}
+} */
 
 @media (max-width: 1000px) {
   html {
