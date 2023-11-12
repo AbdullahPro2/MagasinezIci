@@ -9,24 +9,28 @@ function Carousel() {
       title: "Men's Collection",
       description: "From t-shirt jeans jacket watches bags sunglasses",
       img: require("../imgs/men.jpg"),
+      category: "men",
     },
     {
       title: "Women's Collection",
       description:
         "Tops Leggings Coats Outerwear Jewelry Accessories Handbags Purses Eyewear",
       img: require("../imgs/women.jpg"),
+      category: "women",
     },
     {
       title: "Jewelery",
       description:
         "Jewelry Necklaces Bracelets Earrings Rings Brooches Charms Pendants Anklets Jewelry Sets",
       img: require("../imgs/jewelery.jpg"),
+      category: "jewelery",
     },
     {
       title: "Electronics",
       description:
         "Smartphones Laptops Tablets Headphones Smartwatches Cameras Speakers Printers Monitors Smart Home Devices",
       img: require("../imgs/electronics.jpg"),
+      category: "electronics",
     },
   ];
 
