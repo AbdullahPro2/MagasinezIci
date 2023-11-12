@@ -9,8 +9,10 @@
 .App {
   font-family: "Montserrat", sans-serif;
   background-color: #f6f6f6;
+  min-height: 100vh;
 }
 .footer {
+  font-family: "Montserrat", sans-serif;
   text-align: center;
   padding: 15px;
   width: 100%;

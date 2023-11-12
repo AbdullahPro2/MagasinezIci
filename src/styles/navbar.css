@@ -36,6 +36,9 @@ a {
 .cart {
   width: 30px;
 }
+.cross {
+  filter: invert(1);
+}
 @media (max-width: 1000px) {
   .nav-list {
     flex-direction: column;
@@ -48,7 +51,7 @@ a {
     transition: all 0.3s;
     font-size: 1.2rem;
     z-index: 3;
-    background-color: rgba(246, 246, 246, 0.75);
+    background-color: rgba(112, 111, 111, 0.75);
     height: 100vh;
   }
   .nav-list .navlink {
@@ -60,9 +63,14 @@ a {
     display: flex;
     margin-right: 1rem;
   }
+  .cart {
+    filter: invert(1);
+  }
+
   /* Trick */
   .nav-active .navlink {
     display: inline;
+    color: white;
   }
   .nav-active {
     transform: translateX(0);

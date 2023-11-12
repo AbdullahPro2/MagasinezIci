@@ -15,17 +15,20 @@ function Navbar() {
     {
       root: null,
       rootMargin: "0px",
-      threshold: 0.3,
+      threshold: 0.8,
     },
     navbarRef
   );
+  console.log(visible);
   function handleClick() {
     setIsActive(!isActive);
   }
   useEffect(() => {
-    // Update isActive based on the value of visible
-    if (visible === false) setIsActive(false);
+    if (!visible) {
+      setIsActive(false);
+    }
   }, [visible]);
+
   return (
     <header>
       <nav className="nav">
@@ -34,27 +37,55 @@ function Navbar() {
           className={`nav-list ${isActive ? "nav-active" : ""}`}
           ref={navbarRef}
         >
-          <NavLink to="/" className="navlink">
+          <NavLink
+            to="/"
+            className="navlink"
+            onClick={() => setIsActive(false)}
+          >
             {" "}
             <li> Home</li>
           </NavLink>{" "}
-          <NavLink to="/products" className="navlink">
+          <NavLink
+            to="/products"
+            className="navlink"
+            onClick={() => setIsActive(false)}
+          >
             {" "}
             <li>Products</li>
           </NavLink>{" "}
-          <NavLink to="/category/men" className="navlink">
+          <NavLink
+            to="/category/men"
+            className="navlink"
+            onClick={() => setIsActive(false)}
+          >
             <li> Men's</li>
           </NavLink>{" "}
-          <NavLink to="/category/women" className="navlink">
+          <NavLink
+            to="/category/women"
+            className="navlink"
+            onClick={() => setIsActive(false)}
+          >
             <li> Women's </li>
           </NavLink>{" "}
-          <NavLink to="/category/jewelery" className="navlink">
+          <NavLink
+            to="/category/jewelery"
+            className="navlink"
+            onClick={() => setIsActive(false)}
+          >
             <li>Jwelery</li>
           </NavLink>{" "}
-          <NavLink to="/category/electronics" className="navlink">
+          <NavLink
+            to="/category/electronics"
+            className="navlink"
+            onClick={() => setIsActive(false)}
+          >
             <li> Electronics</li>
           </NavLink>{" "}
-          <NavLink to="/cart" className="navlink">
+          <NavLink
+            to="/cart"
+            className="navlink"
+            onClick={() => setIsActive(false)}
+          >
             <li>
               <img src={cart} alt="Cart" className="cart" />{" "}
             </li>
@@ -73,7 +104,7 @@ function Navbar() {
             <img
               src={cross}
               alt="navbar Icons"
-              className="nav-icon"
+              className="nav-icon cross"
               onClick={handleClick}
             />
           )}
