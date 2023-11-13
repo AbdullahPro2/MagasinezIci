@@ -1,5 +1,4 @@
 import React from "react";
-import CategoryProduct from "./CategoryProduct";
 
 function CartItem({ product }) {
   return (
