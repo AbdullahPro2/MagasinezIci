@@ -1,15 +1,17 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import Logo from "../imgs/Logo.png";
 import "../styles/navbar.css";
 import cross from "../imgs/CrossIcon.png";
 import menu from "../imgs/MenuIcon.png";
-import cart from "../imgs/cart.png";
+import cartImage from "../imgs/cart.png";
 import useOnScroll from "../hooks/useOnScroll";
+import { ProductContext } from "../context/productContext";
 
 function Navbar() {
   const [isActive, setIsActive] = useState(false);
   const navigate = useNavigate();
+  const { cart } = useContext(ProductContext);
 
   const navbarRef = useRef(null);
   const visible = useOnScroll(
@@ -88,12 +90,15 @@ function Navbar() {
           </NavLink>{" "}
           <NavLink
             to="/cart"
-            className="navlink"
+            className="navlink cart-item"
             onClick={() => setIsActive(false)}
           >
             <li>
-              <img src={cart} alt="Cart" className="cart" />{" "}
+              <img src={cartImage} alt="Cart" className="cart" />{" "}
             </li>
+            {cart.length > 0 && (
+              <p className="cart-item-count">{cart.length}</p>
+            )}
           </NavLink>
         </ul>
         <div className="navbar-icons">

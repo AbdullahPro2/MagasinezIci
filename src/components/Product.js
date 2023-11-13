@@ -20,7 +20,7 @@ function Product({ product }) {
           <p className="product-detail">Rating: {product.rating.rate}</p>
           <p className="product-detail">InStock: {product.rating.count}</p>
         </div>
-        <CartBtn id={product.id} />
+        <CartBtn product={product} />
       </div>
     </div>
   );

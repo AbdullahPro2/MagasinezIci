@@ -44,6 +44,19 @@ a {
   padding: 0.5rem 1rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.561);
 }
+
+.cart-item {
+  position: relative;
+}
+.cart-item-count {
+  border: 2px solid red;
+  border-radius: 100%;
+  width: 1.8rem;
+  text-align: center;
+  position: absolute;
+  top: -1.7rem;
+  left: 50%;
+}
 @media (max-width: 1000px) {
   .nav-list {
     flex-direction: column;
@@ -88,5 +101,12 @@ a {
 @media (max-width: 700px) {
   .logo {
     width: 15%;
+  }
+}
+@media (min-width: 1000px) {
+  .cart-item-count {
+    width: 1.5rem;
+    top: -1rem;
+    left: -50% !important;
   }
 }

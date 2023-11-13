@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import cart from "../imgs/cart.png";
-function CartBtn({ id }) {
+import { ProductContext } from "../context/productContext";
+function CartBtn({ product }) {
+  const { addToCart } = useContext(ProductContext);
+  function handleAddToCart() {
+    addToCart(product);
+  }
   return (
     <button
       className="add-cart category-prodcut-button"
-      onClick={() => console.log(id)}
+      onClick={handleAddToCart}
     >
       <img src={cart} alt="cart" className="add-cart-image" /> Add To Cart
     </button>

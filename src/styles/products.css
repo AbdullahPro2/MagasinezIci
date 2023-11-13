@@ -121,7 +121,6 @@
     position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* grid-template-rows: 1fr auto; */
   }
   .category-prodcut-details {
     display: flex;
@@ -132,12 +131,16 @@
   .category-prodcut-details h5 {
     font-size: x-large;
   }
-  .category-prodcut-button {
-    position: absolute;
-    width: 45%;
-    bottom: 0;
-  }
 }
+.emptyCart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  font-size: larger;
+  font-weight: bold;
+}
+
 @media (min-width: 1024px) {
   .products-container {
     display: grid;
@@ -149,9 +152,5 @@
   .category-prodcut-image {
     width: 100%;
     height: 600px;
-  }
-  .category-prodcut-button {
-    position: absolute;
-    bottom: 2.5rem;
   }
 }

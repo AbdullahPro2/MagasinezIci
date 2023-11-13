@@ -4,6 +4,7 @@ const ProductContext = createContext();
 const initialState = {
   products: [],
   isLoading: false,
+  cart: [],
 };
 
 function reducer(state, action) {
@@ -19,6 +20,23 @@ function reducer(state, action) {
         products: action.payload,
         isLoading: false,
       };
+    case "addToCart":
+      return {
+        ...state,
+        cart: [...state.cart, action.payload],
+      };
+    case "removeFromCart":
+      return {
+        ...state,
+        cart: state.cart.filter(
+          (cartProduct) => cartProduct.id !== action.payload
+        ),
+      };
+    case "clearCart":
+      return {
+        ...state,
+        cart: [],
+      };
     case "error":
       return {
         ...state,
@@ -31,7 +49,10 @@ function reducer(state, action) {
 }
 
 function ProductProvider({ children }) {
-  const [{ products, isLoading }, dispatch] = useReducer(reducer, initialState);
+  const [{ products, isLoading, cart }, dispatch] = useReducer(
+    reducer,
+    initialState
+  );
   useEffect(() => {
     async function fetchProdcuts() {
       dispatch({ type: "loading" });
@@ -49,8 +70,26 @@ function ProductProvider({ children }) {
     fetchProdcuts();
   }, []);
 
+  function addToCart(product) {
+    dispatch({ type: "addToCart", payload: product });
+  }
+  function removeFromCart(productId) {
+    dispatch({ type: "removeFromCart", payload: productId });
+  }
+  function clearCart() {
+    dispatch({ type: "clearCart" });
+  }
   return (
-    <ProductContext.Provider value={{ products, isLoading }}>
+    <ProductContext.Provider
+      value={{
+        products,
+        isLoading,
+        cart,
+        addToCart,
+        removeFromCart,
+        clearCart,
+      }}
+    >
       {children}
     </ProductContext.Provider>
   );
