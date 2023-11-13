@@ -9,14 +9,14 @@ function Carousel() {
       title: "Men's Collection",
       description: "From t-shirt jeans jacket watches bags sunglasses",
       img: require("../imgs/men.jpg"),
-      category: "men",
+      category: "men's",
     },
     {
       title: "Women's Collection",
       description:
         "Tops Leggings Coats Outerwear Jewelry Accessories Handbags Purses Eyewear",
       img: require("../imgs/women.jpg"),
-      category: "women",
+      category: "women's",
     },
     {
       title: "Jewelery",

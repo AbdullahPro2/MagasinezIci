@@ -16,6 +16,7 @@ a {
 .logo {
   width: 7%;
   filter: brightness(1%);
+  cursor: pointer;
 }
 .nav-list {
   display: flex;
@@ -38,6 +39,10 @@ a {
 }
 .cross {
   filter: invert(1);
+}
+.active {
+  padding: 0.5rem 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.561);
 }
 @media (max-width: 1000px) {
   .nav-list {

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Logo from "../imgs/Logo.png";
 import "../styles/navbar.css";
 import cross from "../imgs/CrossIcon.png";
@@ -9,6 +9,7 @@ import useOnScroll from "../hooks/useOnScroll";
 
 function Navbar() {
   const [isActive, setIsActive] = useState(false);
+  const navigate = useNavigate();
 
   const navbarRef = useRef(null);
   const visible = useOnScroll(
@@ -19,7 +20,6 @@ function Navbar() {
     },
     navbarRef
   );
-  console.log(visible);
   function handleClick() {
     setIsActive(!isActive);
   }
@@ -32,7 +32,12 @@ function Navbar() {
   return (
     <header>
       <nav className="nav">
-        <img src={Logo} alt="logo" className="logo" />
+        <img
+          src={Logo}
+          alt="logo"
+          className="logo"
+          onClick={() => navigate("/")}
+        />
         <ul
           className={`nav-list ${isActive ? "nav-active" : ""}`}
           ref={navbarRef}
@@ -54,14 +59,14 @@ function Navbar() {
             <li>Products</li>
           </NavLink>{" "}
           <NavLink
-            to="/category/men"
+            to="/category/men's"
             className="navlink"
             onClick={() => setIsActive(false)}
           >
             <li> Men's</li>
           </NavLink>{" "}
           <NavLink
-            to="/category/women"
+            to="/category/women's"
             className="navlink"
             onClick={() => setIsActive(false)}
           >
