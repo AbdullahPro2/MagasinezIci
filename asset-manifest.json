@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/MagasinezIci/static/css/main.28873cad.css",
+    "main.js": "/MagasinezIci/static/js/main.951d9ee2.js",
+    "static/media/jewelery.jpg": "/MagasinezIci/static/media/jewelery.c3907c424e2b0d92c306.jpg",
+    "static/media/women.jpg": "/MagasinezIci/static/media/women.cb60a3f7521602d132c8.jpg",
+    "static/media/men.jpg": "/MagasinezIci/static/media/men.7ae45d39aab7eaaf331e.jpg",
+    "static/media/electronics.jpg": "/MagasinezIci/static/media/electronics.168f08c7ecfcc3f05399.jpg",
+    "static/media/Logo.png": "/MagasinezIci/static/media/Logo.193a163ca8e875558e3c.png",
+    "index.html": "/MagasinezIci/index.html",
+    "main.28873cad.css.map": "/MagasinezIci/static/css/main.28873cad.css.map",
+    "main.951d9ee2.js.map": "/MagasinezIci/static/js/main.951d9ee2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.28873cad.css",
+    "static/js/main.951d9ee2.js"
+  ]
+}
