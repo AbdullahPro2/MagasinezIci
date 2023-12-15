@@ -1,3 +1,5 @@
+The project is live at: https://abdullahpro2.github.io/MagasinezIci/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
